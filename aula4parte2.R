@@ -14,4 +14,5 @@ tempCompMedia = dados$Temp.Comp.Media
 umidadeRelativaMedia = dados$Umidade.Relativa.Media
 velocidadedoVentoMedia = dados$Velocidade.do.Vento.Media
 
-summary(dados)
+summary(dados);
+
