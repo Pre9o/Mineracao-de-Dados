@@ -55,7 +55,7 @@ modificar_nome_produto <- function(produto) {
 for (i in seq_along(data)) {
   data[[i]]$compra <- i
   data[[i]]$produtos <- sapply(data[[i]]$produtos, corrigir_caracteres)
-  data[[i]]$produtos <- sapply(data[[i]]$produtos, modificar_nome_produto)
+  #data[[i]]$produtos <- sapply(data[[i]]$produtos, modificar_nome_produto)
 }
 
 write_json(data, "padaria_trab_modificado.json", pretty = TRUE)
@@ -68,11 +68,11 @@ regras <- apriori(transacoes, parameter = list(supp = 0.05, conf = 0.4))
 
 regras <- subset(regras, size(lhs(regras)) > 0)
 
-regrasDoce <- apriori(transacoes, parameter = list(supp = 0.05, conf = 0.3))
+regrasDoce <- apriori(transacoes, parameter = list(supp = 0.02, conf = 0.3))
 
 subsetRegrasDoce <- subset(regrasDoce, size(lhs(regrasDoce)) > 0)
 
-subsetRegrasDoce <- subset(subsetRegrasDoce, rhs(subsetRegrasDoce) %in% "doce")
+subsetRegrasDoce <- subset(subsetRegrasDoce, rhs(subsetRegrasDoce) %in% "Doce")
 
 inspect(regras)
 
