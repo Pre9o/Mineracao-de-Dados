@@ -34,7 +34,6 @@ leverage = suportAeGoal - suportA * suportGoal
 confidence = suportAeGoal / suportA
 
 m = interestMeasure(rules, c("conviction", "leverage", "confidence"))
-m
 
 # como posso percorrer toda o conjunto de regras e calcular a conviccao e a influencia entre cada uma das variaveis e a variavel goal?
 
