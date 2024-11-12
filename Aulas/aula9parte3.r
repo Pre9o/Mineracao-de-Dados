@@ -11,9 +11,9 @@ cambio = factor(mtcars$am, levels = c(0, 1), labels = c("manual", "automatico"))
 trainIndex = sample(nrow(mtcars), as.integer(nrow(mtcars) * 0.7))
 
 trainCars = mtcars[trainIndex,]
-testCars = mtcars[-trainIndex,]
+testCars <- mtcars[-trainIndex,]
 
-modelLinear = lm(peso ~ kpl, data = mtcars)
+modelLinear <- lm(peso ~ kpl, data = mtcars)
 
 summary(modelLinear)
 
